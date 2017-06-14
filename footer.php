@@ -37,7 +37,7 @@
 
 	<?php do_action( 'storefront_after_footer' ); ?>
 
-	<div id="megamenuOverlay" class="mm-overlay mm-hidden"></div>
+	<!-- <div id="megamenuOverlay" class="mm-overlay mm-hidden"></div> -->
 
 </div><!-- #page -->
 

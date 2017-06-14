@@ -10,13 +10,80 @@
     & .entry-header {
       display: none;
     }
-
-
-    // Removes the max-width and padding of the .col-full class on the homepage
-    // to accomodate for the full-width hero image.
-    // & .col-full {
-    //   max-width: none;
-    //   padding: 0;
-    // } // end .col-full
   } // end .site-content
 } // end body.home
+
+
+// -----------------------------------------
+// ## HOMEPAGE => HERO IMAGE
+#ilsv-homepage-hero-image {
+
+  // Background image size tweaks mobile devices.
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 250%;
+  margin-top: 0px;
+  // margin-bottom: 0;
+  max-height: 475px;
+
+  // Change <p> tags to darker color for mobile devices.
+  & p {
+    color: $color-black-alt;
+  }
+
+  @media (min-width: 375px) {
+    // Swap bg size to cover.
+    background-size: cover;
+  } // end @375
+
+  @media (min-width: 768px) {
+    // Background image size tweaks for 768px+.
+    background-position: center center;
+    max-height: none;
+    min-height: 60vh;
+
+    // Revert <p> tags back to their original color.
+    & p {
+      color: inherit;
+    }
+
+    // Get rid of background overlay at 768px+.
+    & .elementor-background-overlay {
+      display: none;
+    }
+  } // end @768
+}
+
+
+// -----------------------------------------
+// ## HOMEPAGE => ROW OF ICONS
+.ilsv-intro-icons {
+
+  & .elementor-row {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .elementor-column {
+    width: 45%;
+    @media (min-width: 768px) { width: inherit; }
+  }
+}
+
+
+// -----------------------------------------
+// ## HOMEPAGE => IMAGE BLOCKS W/TEXT
+.ilsv-home-image-block {
+
+  // Adjust the minimum height of the image blocks for mobiles,
+  // then revert back to initial size via Elementor.
+  min-height: 500px;
+  @media (min-width: 768px) { min-height: inherit; }
+
+  // Adjust the line-height for <p> tags inside the image blocks
+  // for mobile, then revert back to 1.5 @1024px+.
+  & p {
+    line-height: 1.25;
+    @media (min-width: 1024px) { line-height: inherit; }
+  }
+}

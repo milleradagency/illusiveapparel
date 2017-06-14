@@ -1,0 +1,62 @@
+// ==============================================================
+// ANIMATION DELAYS
+//
+// Add the class to your element according to the delay you want.
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # ANIMATE.CSS
+// https://daneden.github.io/animate.css/
+//
+// ==============================================================
+// ## Animations kept from animate.css are as follows:
+//
+// .bounce, .shake .tada
+// .fadeInDown, .fadeInLeft, .fadeInRight, .fadeInUp
+// .fadeOutDown, .fadeOutLeft, .fadeOutRight, .fadeOutUp
+
+
+
+
+// -----------------------------------------
+// ## Helper classes that add delays to the number of child elements set in
+// increments of 200ms each.
+
+// Parent row with 1 child elements.
+.animation-delay-1 {
+  & .elementor-row > .elementor-column {
+    &:nth-child(1) { animation-delay: 200ms; }
+    &:nth-child(2) { animation-delay: 400ms; }
+  }
+}
+
+// Parent row with 2 child elements.
+.animation-delay-2 {
+  & .elementor-row > .elementor-column {
+    &:nth-child(1) { animation-delay: 200ms; }
+    &:nth-child(2) { animation-delay: 400ms; }
+  }
+}
+
+// Parent row with 3 child elements.
+.animation-delay-3 {
+  & .elementor-row > .elementor-column {
+    &:nth-child(1) { animation-delay: 200ms; }
+    &:nth-child(2) { animation-delay: 400ms; }
+    &:nth-child(3) { animation-delay: 600ms; }
+  }
+}
+
+// Parent row with 4 child elements.
+.animation-delay-4 {
+  & .elementor-row > .elementor-column {
+    &:nth-child(1) { animation-delay: 200ms; }
+    &:nth-child(2) { animation-delay: 400ms; }
+    &:nth-child(3) { animation-delay: 600ms; }
+    &:nth-child(4) { animation-delay: 800ms; }
+  }
+}

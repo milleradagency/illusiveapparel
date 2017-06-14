@@ -45,54 +45,142 @@
 
 // ==============================================================
 //
-// # HEADER LAYOUT
+// # HEADER LAYOUT — MOBILE
 //
 // ==============================================================
-// ## HEADER LAYOUT => header container (header.site-header)
 .site-header {
   border-bottom-color: $navbar-border-color;
   box-shadow: $navbar-wrapper-box-shadow;
   padding: $navbar-wrapper-padding;
   margin: $navbar-wrapper-margin;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 
-  // Injects flexbox into the site's header area, allowing us to ensure that
-  // the child elements line up as intended via the original mockup PSD.
-  .sp-header-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+  & .sp-header-row {
+    padding: 0;
+  }
+
+  & .sp-header-span-2 {
     width: 100%;
-    max-width: $navbar-wrapper-max-width;
-    padding: $navbar-wrapper-inner-padding;
-    margin: 0 auto;
+  }
 
+  & .site-branding {
+    display: none;
+  }
 
-    // header child div styles
-    & .sp-header-span-2 {
-      // Original widths were set to %s based on the parent theme, so setting
-      // width to auto of all 3 spans (logo, nav, search) ensures our flexbox
-      // layout works as desired.
-      width: auto;
-      margin: 0;
+  // -----------------------------------------
+  // ## Mobile menu button class.
+  & .menu-toggle {
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    border: 0;
+    padding: 0;
+
+    // Mobile menu button's "Menu" text.
+    & span {
+      padding-left: 20px;
+
+      // Mobile menu button's hamburger icon.
+      &:before, &:after {
+        left: 42%;
+      }
+    } // end span
+
+    // Mobile menu button's hamburger icon.
+    &:before, &:after {
+      left: 42%;
     }
+  } // end .menu-toggle
 
+  // -----------------------------------------
+  // ## Mobile menu's nav layout.
+  & .handheld-navigation {
+    & > .menu {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
 
-    // header search bar fix
-    // The searchbar originally had a massive right margin, for w/e reason...
-    & .sp-header-post-6 {
-      margin-right: 0;
-    }
-
-
-    // header logo
-    // Sets the max-size of the header logo to 100px.
-    & .custom-logo {
-      max-width: 100px;
-    }
-  } // end .sp-header-row
+      // Mobile menu <a> links.
+      & .menu-item > a {
+        padding: 16px 0;
+      }
+    } // end .menu
+  } // end .handheld-navigation
 } // end .site-header
+
+
+
+
+// ==============================================================
+//
+// # HEADER LAYOUT — DESKTOP
+//
+// ==============================================================
+// ## HEADER LAYOUT — DESKTOP => header container (header.site-header)
+@media (min-width:768px) {
+  .site-header {
+    position: relative;
+
+    & .site-branding {
+      display: block;
+    }
+
+    // Injects flexbox into the site's header area, allowing us to ensure that
+    // the child elements line up as intended via the original mockup PSD.
+    & .sp-header-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      width: 100%;
+      max-width: $navbar-wrapper-max-width;
+      padding: $navbar-wrapper-inner-padding;
+      margin: 0 auto;
+
+
+      // header child div styles
+      & .sp-header-span-2 {
+        // Original widths were set to %s based on the parent theme, so setting
+        // width to auto of all 3 spans (logo, nav, search) ensures our flexbox
+        // layout works as desired.
+        width: auto;
+        margin: 0;
+      }
+
+
+      // header search bar fix
+      // The searchbar originally had a massive right margin, for w/e reason...
+      & .sp-header-post-6 {
+        width: 100%;
+        margin-right: 0;
+      }
+
+
+      // header logo
+      // Sets the max-size of the header logo to 100px.
+      & .custom-logo {
+        max-width: 100px;
+      }
+    } // end .sp-header-row
+  } // end .site-header
+} // end @768px
+
+@media (min-width:1024px) {
+  .site-header {
+    & .sp-header-row {
+      flex-direction: row;
+      & .sp-header-post-6 {
+        width: auto;
+      }
+    } // end sp-header-row
+  }
+} // end @1024px
 
 
 
@@ -133,18 +221,20 @@
 
 // ==============================================================
 //
-// # NAV LINKS
+// # NAV LINKS — DESKTOP
 //
 // ==============================================================
-// ## NAV LINKS => header navigation
+// ## NAV LINKS — DESKTOP => header navigation
 .main-navigation {
-  // Adjustments to the <a> tag links in the main menu
-  & ul li a {
-    font-size: $navbar-link-font-size;
-    font-weight: $navbar-link-font-weight;
-    text-transform: $navbar-link-text-transform;
-    transition: $navbar-link-transition-speed;
-  }
+  & .primary-navigation {
+    // Adjustments to the <a> tag links in the main menu
+    & ul li a {
+      font-size: $navbar-link-font-size;
+      font-weight: $navbar-link-font-weight;
+      text-transform: $navbar-link-text-transform;
+      transition: $navbar-link-transition-speed;
+    }
+  } // end .primary-navigation
 } // end .main-navigation
 
 

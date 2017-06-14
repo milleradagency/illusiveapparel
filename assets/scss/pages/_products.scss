@@ -4,6 +4,21 @@
 //
 // Styles and adjustments to WooCommerce's default products CSS
 // ==============================================================
+
+// -----------------------------------------
+// ## Hide theme's default cart button
+.cart { display: none; }
+
+// -----------------------------------------
+// ## Product pages (archives)
+.archive .site-main {
+  max-width: $products-page-max-width;
+  padding: $products-page-padding;
+  margin: $products-page-margin;
+}
+
+// -----------------------------------------
+// ## Single product pages
 .single-product div.product {
   max-width: $products-page-max-width;
   padding: $products-page-padding;

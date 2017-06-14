@@ -28,6 +28,7 @@ $shadow-material-depth-2:               0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rg
 $shadow-material-depth-3:               0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 $shadow-material-depth-4:               0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $shadow-material-depth-5:               0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$shadow-material-depth-6:               0 23px 38px rgba(0,0,0,0.30), 0 19px 12px rgba(0,0,0,0.22);
 $shadow-material-transition:            all 0.3s cubic-bezier(.25,.8,.25,1);
 
 
@@ -72,6 +73,15 @@ $type-headings-h5-size:                 .825rem;
 $type-headings-h6-size:                 .625rem;
 
 // -----------------------------------------
+// ## TYPOGRAPHY => HEADINGS => LINE HEIGHTS
+$type-headings-h1-line-height:          .75;
+$type-headings-h2-line-height:          .875;
+$type-headings-h3-line-height:          1;
+$type-headings-h4-line-height:          1;
+$type-headings-h5-line-height:          1;
+$type-headings-h6-line-height:          1;
+
+// -----------------------------------------
 // ## TYPOGRAPHY => UTILITIES => TEXT LEAD
 $type-text-lead-font-size:              1.25rem;
 $type-text-lead-font-weight:            normal;
@@ -111,7 +121,7 @@ $navbar-search-border:                  1px solid $color-gray-light;
 // # MEGA MENU
 //
 // ==============================================================
-$megamenu-box-shadow:                   $navbar-wrapper-box-shadow;
+$megamenu-box-shadow:                   $shadow-material-depth-6;
 
 
 
