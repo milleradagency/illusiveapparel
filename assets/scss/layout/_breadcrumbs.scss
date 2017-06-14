@@ -1,0 +1,20 @@
+// ==============================================================
+// BREADCRUMBS
+//
+// Styles and adjustments for the site's primary desktop breadcrumb system
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # FIXES
+//
+// ==============================================================
+// ## Removes the bottom margin from the parent theme's breadcrumb component.
+.woocommerce-breadcrumb {
+  max-width: $breadcrumb-max-width;
+  padding: $breadcrumb-padding;
+  margin: $breadcrumb-margin;
+}

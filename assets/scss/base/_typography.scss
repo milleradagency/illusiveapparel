@@ -1,0 +1,94 @@
+// ==============================================================
+// # TYPOGRAPHY
+//
+// Global typographic styles for giftwrapcreations.com
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # BODY
+//
+// ==============================================================
+// ## BODY => paragraph tags
+// Removes the margin from the final <p> tag in a section
+p {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+// ==============================================================
+//
+// # HEADINGS
+//
+// ==============================================================
+// ## HEADINGS => GLOBALS
+.elementor-heading-title,
+h1, h2, h3, h4, h5, h6 {
+  color: $type-headings-color;
+  font-weight: $type-headings-font-weight;
+  text-transform: $type-headings-text-transform;
+}
+
+// -----------------------------------------
+// ## HEADINGS => h1
+.elementor-heading-title > h1,
+h1 {
+  font-size: $type-headings-h1-size;
+}
+
+// -----------------------------------------
+// ## HEADINGS => h2
+.elementor-heading-title > h2,
+h2 {
+  font-size: $type-headings-h2-size;
+}
+
+// -----------------------------------------
+// ## HEADINGS => h3
+.elementor-heading-title > h3,
+h3 {
+  font-size: $type-headings-h3-size;
+}
+
+// -----------------------------------------
+// ## HEADINGS => h4
+.elementor-heading-title > h4,
+h4 {
+  font-size: $type-headings-h4-size;
+}
+
+// -----------------------------------------
+// ## HEADINGS => h5
+.elementor-heading-title > h5,
+h5 {
+  font-size: $type-headings-h5-size;
+}
+
+// -----------------------------------------
+// ## HEADINGS => h6
+.elementor-heading-title > h6,
+h6 {
+  font-size: $type-headings-h6-size;
+}
+
+
+
+
+// ==============================================================
+//
+// # UTILITIES
+//
+// ==============================================================
+// ## UTILITIES => TEXT LEAD
+.text-lead {
+  font-size: $type-text-lead-font-size;
+  font-weight: $type-text-lead-font-weight;
+  text-transform: $type-text-lead-text-transform;
+}

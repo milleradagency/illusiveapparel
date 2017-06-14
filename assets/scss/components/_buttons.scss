@@ -1,0 +1,72 @@
+// ==============================================================
+// BUTTONS
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # DEFAULT
+//
+// ==============================================================
+.elementor-button-link.elementor-button {
+  color: $button-default-color;
+  background: $button-default-background;
+  border-width: $button-default-border-size;
+  border-style: $button-default-border-style;
+  border-color: $button-default-border-color;
+  border-radius: $button-global-border-radius !important;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $button-default-background-hover;
+    opacity: 0;
+    transition: transform .15s ease-out, opacity .15s ease-out;
+    transform: scaleX(0);
+  }
+
+  &:hover, &:focus{
+    color: $button-default-color-hover;
+    border-color: $button-default-border-color-hover;
+    opacity: 1;
+    transition: all .5s cubic-bezier(.02, .01, .47, 1);
+  }
+
+  &:hover:before, &:focus:before {
+    opacity: 1;
+    transition: transform .2s ease-in, opacity .2s ease-in;
+    transform: scaleX(1);
+  }
+
+  & .elementor-button-text {
+    font-weight: $button-global-font-weight;
+    text-transform: $button-global-text-transform;
+  }
+} // end .elementor-button
+
+
+
+
+// ==============================================================
+//
+// # DEFAULT INVERTED
+//
+// ==============================================================
+.button-default-inverted {
+  & .elementor-button-link.elementor-button {
+    @extend .elementor-button-link.elementor-button;
+    background: transparent;
+    border-color: #fff;
+  }
+}

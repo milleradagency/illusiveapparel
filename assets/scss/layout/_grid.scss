@@ -1,0 +1,68 @@
+// ==============================================================
+// GRID
+//
+// Styles and adjustments for the site's grid system.
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # CONNECT CONTENT TO FOOTER
+//
+// ==============================================================
+// ## Removes bottom margin from various parent theme elements in order to
+// connect the main content section to the footer as per the original mockup.
+.content-area,
+.site-main,
+.hentry {
+  margin-bottom: 0;
+}
+
+
+
+
+// ==============================================================
+//
+// # COL-FULL
+//
+// ==============================================================
+.col-full {
+  max-width: $col-full-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Removed the padding around the .col-full class. The default had a
+  // percentage padding which was superflous considering the content's
+  // max-width and side margins are determined via Elementor's section being
+  // boxed or full-width.
+  padding: $col-full-padding;
+}
+
+
+
+
+// ==============================================================
+//
+// # ENTRY HEADER
+//
+// ============================================================== 
+.entry-header {
+  max-width: $content-header-max-width;
+  padding: $content-header-padding;
+  margin: $content-header-margin;
+}
+
+
+
+
+// ==============================================================
+//
+// # ELEMENTOR SECTIONS
+//
+// ==============================================================
+// ## ELEMENTOR => Boxed
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: $elementor-boxed-max-width;
+}

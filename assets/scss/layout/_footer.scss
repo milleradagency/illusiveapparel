@@ -1,0 +1,161 @@
+// ==============================================================
+// FOOTER
+//
+// Styles and adjustments for the site's primary desktop footer
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # LAYOUT
+//
+// ==============================================================
+// ## Max-width and padding of the footer's .col-full class.
+.site-footer > .col-full {
+  max-width: $footer-wrapper-max-width;
+  padding: $footer-wrapper-padding;
+  margin: $footer-wrapper-margin;
+}
+
+// -----------------------------------------
+// ## Adjust the width and margins of the footer widgets per mockup.
+.footer-widgets.col-4 .block {
+  width: 15%;
+  margin-right: 0;
+}
+
+// -----------------------------------------
+// ## Adjust the text alignment of the right-hand widget (widget-4 / socials)
+// as well as the container width.
+.footer-widgets.col-4 .block.footer-widget-4 {
+  width: 30%;
+  text-align: right;
+}
+
+
+
+
+// ==============================================================
+//
+// # WIDGET TITLES
+//
+// ==============================================================
+// ## Adjustments to the widget titles.
+.widget .widget-title {
+  color: $footer-widget-title-color;
+  font-size: $footer-widget-title-font-size;
+  font-weight: $footer-widget-title-font-weight;
+  text-transform: $footer-widget-title-text-transform;
+  border-bottom: 0;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+
+
+
+// ==============================================================
+//
+// # MENU LINKS
+//
+// ==============================================================
+.site-footer a {
+  color: $footer-widget-menu-links-color;
+  transition: $footer-widget-links-transition;
+  &:hover, &:focus {
+    color: $footer-widget-menu-links-color-hover;
+    transition: $footer-widget-links-transition-hover;
+    // text-decoration: underline; // for hover accessibility
+  }
+}
+
+// -----------------------------------------
+// ## Current menu item
+.site-footer ul.menu li.current-menu-item > a {
+  color: $footer-menu-current-color !important;
+  font-weight: $footer-menu-current-font-weight;
+  text-transform: $footer-menu-current-text-transform;
+  &:before {
+    content: $footer-menu-current-icon;
+    font: normal normal normal 14px/1 FontAwesome;
+    margin-right: 8px;
+  }
+}
+
+
+
+
+// ==============================================================
+//
+// # SOCIAL MEDIA ICONS
+//
+// ==============================================================
+// ## Targets the social media list block from the Elementor Library (ID #3)
+#elementor-library-3 {
+  & .elementor-social-icon {
+    transition: $footer-widget-links-transition;
+    & i {
+      transition: $footer-widget-links-transition;
+    }
+    &:hover, &:focus {
+      transition: $footer-widget-links-transition-hover;
+      & i {
+        transition: $footer-widget-links-transition-hover;
+      }
+    }
+  }
+}
+
+
+
+
+// ==============================================================
+//
+// # FOOTER BAR
+//
+// ==============================================================
+.ilsv-footer-bar {
+  // ul.menu is Wordpress' generated class for menu lists.
+  & .menu {
+    margin: 0;
+    list-style-type: none;
+    text-align: right;
+
+    // li.menu-item is Wordpress' generated class for menu list items.
+    & .menu-item {
+      display: inline-block;
+      margin-right: 35px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+
+
+// ==============================================================
+//
+// # FIXES
+//
+// ==============================================================
+// ## Remove the left padding from list items for alignment.
+.widget_nav_menu ul li {
+  padding-left: 0;
+}
+
+// -----------------------------------------
+// ## Remove FontAwesome icons from the menu items.
+.widget_nav_menu ul li:before {
+  content: none;
+}
+
+// -----------------------------------------
+// ## Hide theme's default .site-info area; because we added a custom shortcode
+// from our Elementor Library (Footer | Footer Bar Menu) there instead.
+.site-info {
+  display: none;
+}

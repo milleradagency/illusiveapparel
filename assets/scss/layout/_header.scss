@@ -1,0 +1,163 @@
+// ==============================================================
+// HEADER
+//
+// Styles and adjustments for the site's primary desktop header
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # FIXES
+//
+// ==============================================================
+// ## FIXES => header alignment hack/fix
+// The original site-header generated a psuedo :after element that cleared
+// floats, but it hindered the justify-content attribute of our flex; therefore
+// setting the :after's content to 'none' ensures our flex to work.
+@media screen and (min-width: 768px) {
+  .sp-header-active .sp-header-row:after {
+    content: none;
+  }
+}
+
+// -----------------------------------------
+// ## FIXES => remove site-header bottom margin
+.home.page:not(.page-template-template-homepage) .site-header {
+  margin-bottom: 0;
+}
+
+// -----------------------------------------
+// ## FIXES => Menu Item Link Spacing
+// Originally, the background fade glitched when hovering between two menu items
+// that had children due to a break in the <li> items. Reducing the right
+// margin of the list items, minus the last-child, alleviates this issue.
+.main-navigation .nav-menu .menu-item {
+  margin-right: -4px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+
+
+
+// ==============================================================
+//
+// # HEADER LAYOUT
+//
+// ==============================================================
+// ## HEADER LAYOUT => header container (header.site-header)
+.site-header {
+  border-bottom-color: $navbar-border-color;
+  box-shadow: $navbar-wrapper-box-shadow;
+  padding: $navbar-wrapper-padding;
+  margin: $navbar-wrapper-margin;
+
+  // Injects flexbox into the site's header area, allowing us to ensure that
+  // the child elements line up as intended via the original mockup PSD.
+  .sp-header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: $navbar-wrapper-max-width;
+    padding: $navbar-wrapper-inner-padding;
+    margin: 0 auto;
+
+
+    // header child div styles
+    & .sp-header-span-2 {
+      // Original widths were set to %s based on the parent theme, so setting
+      // width to auto of all 3 spans (logo, nav, search) ensures our flexbox
+      // layout works as desired.
+      width: auto;
+      margin: 0;
+    }
+
+
+    // header search bar fix
+    // The searchbar originally had a massive right margin, for w/e reason...
+    & .sp-header-post-6 {
+      margin-right: 0;
+    }
+
+
+    // header logo
+    // Sets the max-size of the header logo to 100px.
+    & .custom-logo {
+      max-width: 100px;
+    }
+  } // end .sp-header-row
+} // end .site-header
+
+
+
+
+// ==============================================================
+//
+// # LOGO SHINE EFFECT
+// http://jsfiddle.net/chriscoyier/hk6z9/1/
+//
+// ==============================================================
+.custom-logo-link {
+  position: relative;
+  overflow: hidden;
+
+  // effect props
+  &:before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: -200%;
+    left: -225%;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0));
+    transition: all 900ms ease-out;
+  }
+
+  // effect trigger
+  &:hover, &:focus {
+    &:before {
+      top: 200%;
+      left: 200%;
+    }
+  }
+} // end .custom-logo-link
+
+
+
+
+// ==============================================================
+//
+// # NAV LINKS
+//
+// ==============================================================
+// ## NAV LINKS => header navigation
+.main-navigation {
+  // Adjustments to the <a> tag links in the main menu
+  & ul li a {
+    font-size: $navbar-link-font-size;
+    font-weight: $navbar-link-font-weight;
+    text-transform: $navbar-link-text-transform;
+    transition: $navbar-link-transition-speed;
+  }
+} // end .main-navigation
+
+
+
+
+// ==============================================================
+//
+// # SEARCH BAR
+//
+// ==============================================================
+.site-search .widget_product_search input[type=search],
+.site-search .widget_product_search input[type=text] {
+  background-color: $navbar-search-background-color;
+  border: $navbar-search-border;
+  box-shadow: $navbar-search-box-shadow;
+}

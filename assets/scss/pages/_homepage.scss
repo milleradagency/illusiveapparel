@@ -1,0 +1,22 @@
+// ==============================================================
+// HOMEPAGE
+// ==============================================================
+// ## HOMEPAGE => body.home
+.home {
+  & .site-content {
+
+    // Hides the <header> element from the main content area of the, as the
+    // homepage doesn't need to say "Homepage"...
+    & .entry-header {
+      display: none;
+    }
+
+
+    // Removes the max-width and padding of the .col-full class on the homepage
+    // to accomodate for the full-width hero image.
+    // & .col-full {
+    //   max-width: none;
+    //   padding: 0;
+    // } // end .col-full
+  } // end .site-content
+} // end body.home

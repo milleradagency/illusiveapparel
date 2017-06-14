@@ -1,0 +1,11 @@
+// ==============================================================
+//
+// PRODUCTS
+//
+// Styles and adjustments to WooCommerce's default products CSS
+// ==============================================================
+.single-product div.product {
+  max-width: $products-page-max-width;
+  padding: $products-page-padding;
+  margin: $products-page-margin;
+}

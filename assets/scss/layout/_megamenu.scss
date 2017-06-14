@@ -1,0 +1,66 @@
+// ==============================================================
+// MEGA MENU
+//
+// Styles and adjustments for the site's primary desktop mega menu system
+// ==============================================================
+
+
+
+
+// ==============================================================
+//
+// # GLOBALS
+//
+// ==============================================================
+.primary-navigation .sub-menu {
+  box-shadow: $megamenu-box-shadow;
+  // padding: $breadcrumb-padding;
+  // margin: $breadcrumb-margin;
+}
+
+// -----------------------------------------
+// ## GLOBALS => LAYOUT
+// The Appearence Customizer for the parent theme's megamenu setup proved
+// cumbersome; therefore, I opted to use Elementor Library items instead.
+// However, the spacing/sizing needed adjustment to account for this.
+.smm-mega-menu { // megamenu wrapped class
+  padding: 20px;
+
+  & .smm-span-2,
+  & .smm-post-10 {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+// ==============================================================
+//
+// # SITE OVERLAY WHILE MEGAMENU IS ACTIVE
+//
+// ==============================================================
+.mm-overlay {
+  content: "";
+  background-color: rgba(0,0,0,.65);
+  opacity: 0;
+  transition: 300ms ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &.mm-active {
+    opacity: 1;
+    transition: 300ms ease-in-out;
+    z-index: 1;
+  }
+
+  &.mm-hidden {
+    z-index: -1;
+  }
+}

@@ -1,0 +1,31 @@
+// ==============================================================
+// SHADOWS
+//
+// Material Design Box Shadows
+// https://codepen.io/sdthornton/pen/wBZdXq
+// ==============================================================
+
+.z-depth-1 {
+  box-shadow: $shadow-material-depth-1;
+  transition: $shadow-material-transition;
+}
+
+.z-depth-2 {
+  box-shadow: $shadow-material-depth-2;
+  transition: $shadow-material-transition;
+}
+
+.z-depth-3 {
+  box-shadow: $shadow-material-depth-3;
+  transition: $shadow-material-transition;
+}
+
+.z-depth-4 {
+  box-shadow: $shadow-material-depth-4;
+  transition: $shadow-material-transition;
+}
+
+.z-depth-5 {
+  box-shadow: $shadow-material-depth-5;
+  transition: $shadow-material-transition;
+}
