@@ -1,0 +1,100 @@
+// ==============================================================
+//
+// # PRODUCT COLORS
+//
+// ==============================================================
+// -----------------------------------------
+// ## Style the product colors list section title.
+.ilsv-product-single-colors {
+  @extend .uk-list;
+  border-top: 1px solid #ddd;
+  // padding-top: 8px;
+  position: relative;
+
+  // Add a "COLORS" text label
+  &:before {
+    content: "Colors";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: #222;
+    font-size: .875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+} // end colors title
+
+
+
+
+// ==============================================================
+//
+// # PRODUCT COLORS => LIST ITEM <li> CLASS SPECIFICS
+//
+// ==============================================================
+
+
+// These styles relate to the spcific single product colors. The unordered list
+// is called <ul class="ilsv-product-single-colors"> and each <li> item is
+// given a class that corresponds to the relevant color.
+
+
+// Consult the following URL to convert Pantones to HEX codes:
+// https://www.pantone.com/color-finder/
+
+
+// -----------------------------------------
+// ## PRODUCT COLORS => LIST ITEMS => Individual Style Variables
+// Colors are sorted alphabetically by the color name designated via client
+$color-7715C:           #006269;    // Antique Jade Dome 7715C
+$color-CG3C:            #dededf;    // Ash Gray CG 3C
+$color-224C:            #EB6FBD;    // Azalea 224C
+$color-426C:            #25282A;    // Black 426C
+$color-carolina-blue:   #7f92c1;    // Carolina Blue
+$color-122C:            #FED141;    // Daisy 122C
+$color-dark-chocolate:  #3E2B2E;    // Dark Chocolate Black 5C
+$color-361C:            #43B02A;    // Electric Green 361C
+$color-5535C:           #183028;    // Forest Green 5535C
+$color-1235C:           #FFB81C;    // Gold 1235C
+$color-446C:            #3F4444;    // Heather Dark Gray 446C
+$color-213C:            #E31C79;    // Heliconia 213C
+$color-340C:            #00965E;    // Irish Green 340C
+$color-335C:            #007B5F;    // Kelly Green 335C
+$color-536C:            #A2B2C8;    // Light Blue 536C
+$color-GRAY:            #dddddd;    // Light gray — border for lighter colors
+$color-685C:            #DCB6C9;    // Light Pink 685C
+$color-7488C:           #78D64B;    // Lime 7488C
+$color-7644C:           #582D40;    // Maroon 7644C
+$color-533C:            #1F2A44;    // Navy 533C
+$color-669C:            #3F2A56;    // Purple 669C
+$color-7620C:           #B7312C;    // Red 7620C
+$color-7686C:           #1D4F91;    // Royal 7686C
+$color-7528C:           #C5B9AC;    // Sand 7528C
+$color-641C:            #0067A0;    // Sapphire 641C
+$color-21C:             #f15e25;    // S. (Shocking) Orange 21C
+$color-CG7C:            #b8b8b8;    // Sport Gray CG 7C
+$color-7592C:           #B15533;    // Texas Orange 7592C
+$color-000C:            #fdfdfd;    // White 000C
+
+
+// -----------------------------------------
+// ## PRODUCT COLORS => LIST ITEMS => Color box global styles
+.ilsv-product-single-colors {
+  & li {
+    display: inline-block;
+    background-color: inherit;
+    border: 1px solid;
+    padding: 4px 16px 6px;
+    margin: 0;
+
+
+// -----------------------------------------
+// ## PRODUCT COLORS => LIST ITEMS => Individual Style Classes
+&.color-446C { background-color: $color-446C; border-color: $color-446C; color: #fff; }
+&.color-533C { background-color: $color-533C; border-color: $color-533C; color: #fff; }
+&.color-426C { background-color: $color-426C; border-color: $color-426C; color: #fff; }
+&.color-000C { background-color: $color-000C; border-color: $color-GRAY; }
+
+
+  } // end <li>
+} // end ilsv-product-single-colors

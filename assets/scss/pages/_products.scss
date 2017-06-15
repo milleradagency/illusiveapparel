@@ -17,10 +17,219 @@
   margin: $products-page-margin;
 }
 
-// -----------------------------------------
+
+
+
+// ==============================================================
+//
+// # SINGLE PRODUCTS
+//
+// ==============================================================
 // ## Single product pages
 .single-product div.product {
   max-width: $products-page-max-width;
   padding: $products-page-padding;
   margin: $products-page-margin;
 }
+
+
+// Product title
+.single-product .product_title {
+  border-bottom: 6px solid #222;
+  padding-bottom: 32px;
+  margin-bottom: 56px;
+  width: 75%;
+}
+
+
+// Style the price
+.single-product div.product p.price {
+  font-size: 115px;
+  line-height: 1;
+  border-top: 1px solid #ddd;
+  padding: 0;
+  margin: 0 auto 56px;
+  position: relative;
+
+  // Add a "PRICE STARTING AT" text label
+  &:before {
+    content: "Price Starting At";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: #222;
+    font-size: .875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  // Price amount / number
+  & .woocommerce-Price-amount {
+    color: #222;
+    font-weight: 900;
+    letter-spacing: -5px;
+  }
+
+  // Price dollar sign
+  & .woocommerce-Price-currencySymbol {
+    font-weight: 400;
+    font-size: 50%;
+    vertical-align: super;
+    margin-right: 4px;
+  }
+} // end .price
+
+
+// Remove the top border from the meta section.
+.single-product div.product .product_meta { border: 0; }
+
+
+// Style the product description section.
+.single-product .woocommerce-product-details__short-description {
+  border-top: 1px solid #ddd;
+  position: relative;
+
+  // Add a "DESCRIPTION" text label
+  &:before {
+    content: "Description";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: #222;
+    font-size: .875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+} // end description section
+
+
+// Style the product description text.
+.ilsv-product-single-description {
+  margin: 0 0 48px;
+} // end description text
+
+
+// Style the product details list.
+.ilsv-product-single-details {
+  @extend .uk-list;
+  @extend .uk-list-striped;
+  margin: 0 0 48px;
+  position: relative;
+
+  // Add a "DETAILS" text label
+  &:before {
+    content: "Details";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: #222;
+    font-size: .875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+} // end details
+
+
+// Style the single product image gallery items.
+.single-product .woocommerce-product-gallery--with-images {
+
+  & .flex-viewport, // the main/large image
+  & .flex-control-nav > li { // the smaller sub-images
+    border: 1px solid #ddd;
+  }
+} // end images
+
+
+
+// ==============================================================
+//
+// # SIZES & CONTACT FORM => LAYOUT
+//
+// ==============================================================
+// ## Hide the tabbed section from the default theme, remove the extreme
+// padding. and hide the first "Description" <h2> element.
+.wc-tabs { display: none; }
+.wc-tabs-wrapper { padding: 0; }
+.woocommerce-tabs .panel h2:first-of-type { display: none; }
+
+// -----------------------------------------
+// ## Stretch the info section (that was originally tabbed) to full-width.
+.storefront-full-width-content .woocommerce-tabs .panel {
+  width: 100%;
+}
+
+// -----------------------------------------
+// ## Styles & adjustments to column spacing of the list/form.
+.storefront-full-width-content .woocommerce-tabs .panel {
+  & .elementor-section {
+
+    // Target child columns when they split from 100% to 50% @768px.
+    @media (min-width: 768px) {
+
+      // Target first child column.
+      & .elementor-col-50:first-child {
+        padding: 0 20px 0 0;
+      } // end first-child
+
+      // Target second child column.
+      & .elementor-col-50:last-child {
+        padding: 0 0 0 20px;
+      } // end first-child
+
+    } // end @768
+
+  } // end section
+} // end tab content
+
+
+
+
+// ==============================================================
+//
+// # SIZES LIST STYLES
+//
+// ==============================================================
+// ## Unfortunately, due to the way Elementor produces individual stylesheets
+// for edits made via the front-end editor. The builder plugin names them
+// dynamiclly – and since I cannot enqueue_style with an array dependancy of a
+// wildcard item, like "elementor-post-*", I had to use !important designations
+// to enforce some of the styles here.
+
+.ilsv-product-single-sizes {
+  & .elementor-price-list {
+
+    // -----------------------------------------
+    // ## Target and style the list items.
+    & .elementor-price-list-item {
+      margin-bottom: 8px !important;
+      & .elementor-price-list-header { margin-bottom: 0; }
+      & sub { top: 0; } // Adjust <sub> positioning for "Y-XX-Small"
+      * .elementor-price-list-separator {
+        border-bottom-width: 1px;
+        border-bottom-color: #949494;
+      }
+    } // end list item
+
+
+    // -----------------------------------------
+    // ## Target and style the "header" spot, first-child of the list.
+    & .elementor-price-list-item:first-child {
+      margin-bottom: 0;
+
+      // ## Adjust the text styles of the header.
+      & .elementor-price-list-header {
+        color: #222;
+        font-size: .875rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      } // end header
+
+      // ## Remove the seperator.
+      & .elementor-price-list-separator {
+        border-bottom-width: 0;
+      }
+    } // end list-item:first-child
+
+  } // end elementor-price-list
+} // end ilsv sizes

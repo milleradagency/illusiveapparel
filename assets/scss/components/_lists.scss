@@ -1,0 +1,190 @@
+// ==============================================================
+//
+// # LISTS
+// Forked from UIkit "uk-list"
+// https://getuikit.com/docs/list
+//
+// ==============================================================
+
+
+
+
+// ==============================================================
+// ## Component: List
+// ==============================================================
+.uk-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+//
+// Micro clearfix
+//
+.uk-list > li::before,
+.uk-list > li::after {
+  content: "";
+  display: table;
+}
+.uk-list > li::after {
+  clear: both;
+}
+
+
+//
+// Remove margin from the last-child
+//
+.uk-list > li > :last-child {
+  margin-bottom: 0;
+}
+
+
+//
+// Nested lists
+//
+.uk-list ul {
+  margin: 0;
+  padding-left: 30px;
+  list-style: none;
+}
+
+
+//
+// Style
+//
+.uk-list > li:nth-child(n+2),
+.uk-list > li > ul {
+  margin-top: 10px;
+}
+
+
+
+
+// ==============================================================
+// ## Style modifiers
+// ==============================================================
+
+//
+// Divider
+//
+.uk-list-divider > li:nth-child(n+2) {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e5e5;
+}
+
+
+//
+// Striped
+//
+.uk-list-striped > li {
+  padding: 10px 10px;
+}
+.uk-list-striped > li:nth-of-type(odd) {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.uk-list-striped > li:nth-of-type(odd) {
+  background: #f8f8f8;
+}
+.uk-list-striped > li:nth-child(n+2) {
+  margin-top: 0;
+}
+
+
+//
+// Bullet
+//
+.uk-list-bullet > li {
+  position: relative;
+  padding-left: calc(1.5em + 10px);
+}
+
+.uk-list-bullet > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%3E%3C%2Fcircle%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  float: left;
+}
+
+
+
+
+// ==============================================================
+// ## Size modifier
+// ==============================================================
+.uk-list-large > li:nth-child(n+2),
+.uk-list-large > li > ul {
+  margin-top: 20px;
+}
+
+
+//
+// Divider
+//
+.uk-list-large.uk-list-divider > li:nth-child(n+2) {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+
+//
+// Striped
+//
+.uk-list-large.uk-list-striped > li {
+  padding: 20px 10px;
+}
+.uk-list-large.uk-list-striped > li:nth-of-type(odd) {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.uk-list-large.uk-list-striped > li:nth-child(n+2) {
+  margin-top: 0;
+}
+
+
+
+
+// ==============================================================
+// ## Component: Description list
+// ==============================================================
+
+//
+// Term
+//
+.uk-description-list > dt {
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.uk-description-list > dt:nth-child(n+2) {
+  margin-top: 20px;
+}
+
+
+//
+// Description
+//
+
+
+
+
+// ==============================================================
+// ## Style modifier
+// ==============================================================
+
+//
+// Line
+//
+.uk-description-list-divider > dt:nth-child(n+2) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}

@@ -1,0 +1,60 @@
+// ==============================================================
+//
+// # FORMS
+// Override styles of the default Elementor forms.
+//
+// ==============================================================
+
+// ## Unfortunately, due to the way Elementor produces individual stylesheets
+// for edits made via the front-end editor. The builder plugin names them
+// dynamiclly – and since I cannot enqueue_style with an array dependancy of a
+// wildcard item, like "elementor-post-*", I had to use !important designations
+// to enforce some of the styles here.
+
+.elementor-field-group {
+  margin-bottom: 24px!important; // (1.5rem)
+
+  // Style the text field's background color.
+  & .elementor-field {
+    background-color: #fdfdfd !important;
+  }
+
+  // Style the border color.
+  & .elementor-field-textual {
+    border-color: #ddd;
+
+    &:focus {
+      border-color: #222;
+      box-shadow: inset 0 0 0 1px #222;
+    }
+  }
+
+  // Style the labels.
+  & .elementor-field-label {
+    color: #222;
+    cursor: text; // For some reason, Elementor had labels as :pointer?? ...
+    font-size: .875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  // Style the submit button.
+  & .elementor-button {
+    @extend .elementor-button-link.elementor-button;
+  }
+
+} // end .elementor-field-group
+
+
+// -----------------------------------------
+// ## Remove the unneeded form styles.
+.input-text,
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=text],
+input[type=url],
+textarea {
+  box-shadow: none;
+  border-radius: 0 !important;
+}
